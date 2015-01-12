@@ -19,7 +19,8 @@
 
             scope.tabs.index = scope.tabs.index || 0;
 
-            element.on('click', function() {
+            element.on('click', function( e ) {
+                e.preventDefault();
                 scope.tabs.index = index;
                 scope.$apply();
             });
