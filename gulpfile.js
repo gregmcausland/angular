@@ -1,0 +1,30 @@
+var gulp        = require('gulp'),
+    path        = require('path'),
+    concat      = require('gulp-concat'),
+    folder      = require('gulp-folders'),
+    exclude     = require('gulp-ignore').exclude,
+    sourcemaps  = require('gulp-sourcemaps'),
+    uglify      = require('gulp-uglify'),
+    pathToFolder = 'js/src';
+
+gulp.task('source', folder(pathToFolder, function(folder){
+    return gulp.src([ path.join(pathToFolder, folder, '**/*.module.js'), path.join(pathToFolder, folder, '**/*.js') ])
+        .pipe(exclude('*.spec.js'))
+        .pipe(sourcemaps.init())
+            .pipe(concat(folder + '.js'))
+            .pipe(uglify())
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest('build'));
+}));
+
+gulp.task('prod', folder(pathToFolder, function(folder){
+    return gulp.src([ path.join(pathToFolder, folder, '**/*.module.js'), path.join(pathToFolder, folder, '**/*.js') ])
+        .pipe(exclude('*.spec.js'))
+        .pipe(concat(folder + '.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest('build'));
+}));
+
+gulp.task('watch', ['source'], function () {
+  gulp.watch('js/**/*.js', ['source'])
+})

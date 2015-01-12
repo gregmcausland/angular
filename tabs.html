@@ -1,0 +1,5 @@
+<ul class="list-group">
+	<li class="list-group-item" ng-repeat="cell in mainCtrl.data | filter:mainCtrl.filterText | limitTo:100">
+		<p>{{cell.first_name}}</p>
+	</li>
+</ul>
