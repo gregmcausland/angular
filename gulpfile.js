@@ -13,7 +13,7 @@ gulp.task('source', folder(pathToFolder, function(folder){
         .pipe(exclude('*.spec.js'))
         .pipe(ngAnnotate())
         .pipe(sourcemaps.init())
-            .pipe(concat(folder + '.js'))
+            .pipe(concat(folder + '.min.js'))
             .pipe(uglify())
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('build'));
@@ -23,7 +23,7 @@ gulp.task('prod', folder(pathToFolder, function(folder){
     return gulp.src([ path.join(pathToFolder, folder, '**/*.module.js'), path.join(pathToFolder, folder, '**/*.js') ])
         .pipe(exclude('*.spec.js'))
         .pipe(ngAnnotate())
-        .pipe(concat(folder + '.js'))
+        .pipe(concat(folder + '.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest('build'));
 }));
