@@ -3,10 +3,9 @@
 
 	angular
 		.module('stv.core')
-		.factory('logger', logger);
+		.factory('$logger', logger);
 
-	logger.$inject = ['logging'];
-
+	/* @ngInject */
 	function logger( logging ) {
 		var service = {
 			log: log

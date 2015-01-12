@@ -5,8 +5,7 @@
 		.module('stv.core.polyfills', [])
 		.run(run);
 
-	run.$inject = ['logger'];
-
+	/* @ngInject */
 	function run( $logger ) {
 		$logger.log('Adding polyfills');
 	}
