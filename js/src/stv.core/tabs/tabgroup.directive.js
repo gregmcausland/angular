@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('stv.core')
+        .module('stv.core.tabs')
         .directive('stvTabGroup', stvTabGroup);
 
     /* @ngInject */
