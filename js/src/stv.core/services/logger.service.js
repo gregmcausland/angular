@@ -3,7 +3,7 @@
 
 	angular
 		.module('stv.core')
-		.factory('$logger', logger);
+		.factory('logger', logger);
 
 	/* @ngInject */
 	function logger( logging ) {

@@ -6,8 +6,8 @@
 		.run(run);
 
 	/* @ngInject */
-	function run( $logger ) {
-		$logger.log('Adding polyfills');
+	function run( logger ) {
+		logger.log('Adding polyfills');
 	}
 
 })();
