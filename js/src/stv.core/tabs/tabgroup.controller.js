@@ -10,18 +10,18 @@
         var vm = this;
 
         $scope.tabs = {
-        	index: 0
+            index: 0
         }
 
         vm.linkIndex = 0;
         vm.bodyIndex = 0;
 
         vm.getLinkIndex = function() {
-        	return vm.linkIndex++;
+            return vm.linkIndex++;
         };
 
         vm.getBodyIndex = function() {
-        	return vm.bodyIndex++;
+            return vm.bodyIndex++;
         }
     };
 
