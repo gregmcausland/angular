@@ -1,19 +1,22 @@
 (function() {
-    'use strict';
+	'use strict';
 
-    angular
-        .module('stv.core.tabs')
-        .directive('stvTabGroup', stvTabGroup);
+	angular
+		.module('stv.core.tabs')
+		.directive('tabGroup', tabgroup);
 
-    /* @ngInject */
-    function stvTabGroup( logger ) {
-        var directive = {
-            restrict: 'EA',
-            controller: 'stvTabGroupController',
-            controllerAs: 'vm',
-            scope: true
-        };
-        return directive;
-    };
+	/* @ngInject */
+	function tabgroup() {
+		var directive = {
+			restrict: 'EA',
+			templateUrl: 'js/src/stv.core/tabs/tabgroup.directive.html',
+			controller: 'TabGroupController',
+			controllerAs: 'vm',
+			transclude: true,
+			bindToController: true
+		}
+
+		return directive;
+	}
 
 })();

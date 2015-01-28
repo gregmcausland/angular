@@ -1,28 +1,28 @@
 (function() {
-    'use strict';
+	'use strict';
 
-    angular
-        .module('stv.core.tabs')
-        .controller('stvTabGroupController', stvTabGroupController);
+	angular
+		.module('stv.core.tabs')
+		.controller('TabGroupController', TabGroupController);
 
-    /* @ngInject */
-    function stvTabGroupController( logger, $scope ) {
-        var vm = this;
+	/* @ngInject */
+	function TabGroupController( logger ) {
+		var vm = this;
 
-        $scope.tabs = {
-            index: 0
-        }
+		vm.addPane 	= addPane;
+		vm.show		= show;
+		
+		vm.panes = [];
 
-        vm.linkIndex = 0;
-        vm.bodyIndex = 0;
+		function show( pane ) {
+			vm.panes.forEach((pane) => pane.selected = false);
+			pane.selected = true;
+		}
 
-        vm.getLinkIndex = function() {
-            return vm.linkIndex++;
-        };
-
-        vm.getBodyIndex = function() {
-            return vm.bodyIndex++;
-        }
-    };
+		function addPane( pane ) {
+			if ( !vm.panes.length ) pane.selected = true;
+			vm.panes.push( pane );
+		}
+	}
 
 })();

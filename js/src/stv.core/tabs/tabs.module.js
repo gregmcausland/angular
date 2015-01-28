@@ -2,6 +2,12 @@
 	'use strict';
 
 	angular
-		.module('stv.core.tabs', []);
+		.module('stv.core.tabs', [])
+		.run(run);
+
+	/* @ngInject */
+	function run( logger ) {
+		logger.log('Adding tabs');
+	}
 
 })();
