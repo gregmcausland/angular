@@ -1,8 +1,8 @@
 <div class="tabs">
 	
 	<ul class="tabs__list">
-		<li ng-repeat="pane in vm.panes" ng-class="{ 'is-active':pane.selected }">
-			<span ng-click="vm.show(pane)">{{pane.title}}</span>
+		<li ng-repeat="pane in vm.panes" ng-class="{ 'is-active':pane.selected }" ng-click="vm.show(pane)">
+			<span>{{pane.title}}</span>
 		</li>
 	</ul>
 
