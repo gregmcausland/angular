@@ -7,6 +7,7 @@ var sourcemaps  = require('gulp-sourcemaps');
 var uglify      = require('gulp-uglify');
 var ngAnnotate  = require('gulp-ng-annotate');
 var traceur     = require('gulp-traceur');
+var html2js     = require('gulp-html2js');
 var pathToFolder = 'js/src';
 
 gulp.task('source', folder(pathToFolder, function(folder){
