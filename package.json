@@ -12,6 +12,8 @@
     "gulp-uglify": "^1.0.2"
   },
   "devDependencies": {
+    "event-stream": "^3.2.1",
+    "gulp-cache": "^0.2.4",
     "gulp-html2js": "^0.2.0",
     "gulp-ng-annotate": "^0.4.3",
     "gulp-traceur": "^0.15.0"

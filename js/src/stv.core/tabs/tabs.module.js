@@ -2,7 +2,7 @@
 	'use strict';
 
 	angular
-		.module('stv.core.tabs', [])
+		.module('stv.core.tabs', ['stv.core.tmpl'])
 		.run(run);
 
 	/* @ngInject */
